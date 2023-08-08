@@ -87,7 +87,8 @@ def get_photos(user_id, vk_token, offset=0):
         'count': 10,
         'v': 5.131
     }
-    while True:
+    array_photos = ['1']
+    while len(array_photos) != 0:
         try:
             response = requests.get('https://api.vk.com/method/photos.get', params=params)
             array_photos = response.json()['response']['items']
